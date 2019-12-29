@@ -145,7 +145,7 @@ def validation(sequence):
 
 """ main """
 # initiate values
-start = time.clock()
+start = time.process_time()
 wordLength = int(sys.argv[1])
 pos1 = wordLength - 1
 pos2 = wordLength - 3
@@ -154,14 +154,14 @@ startDict = sortWordsIntoDictionaries(words, 3, 1)
 endDict = sortWordsIntoDictionaries(words, pos1, pos2)
 startingWord = startValues(startDict, endDict)
 # record the time at the start of the search
-algoStart = time.clock()
+algoStart = time.process_time()
 # find longest sequence length
 currentSeq = createSequence(startDict, endDict, startingWord)
 # record times for whole program and search
-algoTime = time.clock() - algoStart
-timeTaken = time.clock() - start
+algoTime = time.process_time() - algoStart
+timeTaken = time.process_time() - start
 #print results
 #print(validation(currentSeq))
-print( algoTime, " time taken")
+#print( algoTime, " time taken")
 print(len(currentSeq), " total words found in sequence")
 print(timeTaken, "total time")
